@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <style> .theme-panel{position:fixed;top:16px;right:18px;z-index:40;display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.92);box-shadow:0 10px 30px rgba(15,10,5,0.18);} .theme-panel__swatch{width:18px;height:18px;border-radius:6px;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,0.08);} .theme-panel__slider{appearance:none;-webkit-appearance:none;width:150px;height:8px;border-radius:999px;background:linear-gradient(90deg, #ff0044 0%, #ff9800 16%, #ffeb3b 32%, #4caf50 48%, #00bcd4 64%, #3f51b5 80%, #e91e63 100%);} .theme-panel__slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,0.3);cursor:pointer;margin-top:-5px;} .theme-panel__slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,0.3);cursor:pointer;} .theme-panel__slider::-moz-range-track{background:transparent;border:none;} </style></head>
+  <body class="home-theme">
+    <div class="theme-panel" data-theme-panel>
+      <div class="theme-panel__swatch"></div>
+      <input
+        type="range"
+        min="0"
+        max="360"
+        value="24"
+        class="theme-panel__slider"
+        data-theme-hue
+        aria-label="Adjust theme color"
+      />
+    </div>
+    <main>
+      <section class="hero">
+        <p class="hero-eyebrow stagger-item" style="--stagger-delay: 40ms" data-copy="heroEyebrow"></p>
+        <h1 class="hero-title stagger-item" style="--stagger-delay: 120ms">RESOURCES</h1>
+        <p class="hero-sub stagger-item" style="--stagger-delay: 200ms" data-copy="heroSub"></p>
+        <div class="hero-cta stagger-item" style="--stagger-delay: 260ms">
+          <a href="#categories" class="btn primary" data-copy="ctaExplore"></a>
+          <a href="collection.html?category=fonts" class="btn ghost" data-copy="ctaJump"></a>
+        </div>
+      </section>
+      <section class="category-section" id="categories">
+        <div class="section-header">
+          <p data-copy="categoryEyebrow"></p>
+          <h2 data-copy="categoryTitle"></h2>
+        </div>
+        <div class="category-grid" data-category-grid></div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p data-copy="footerNote"></p>
+    </footer>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/home.js"></script>
+  </body>
+</html>

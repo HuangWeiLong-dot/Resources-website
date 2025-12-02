@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resource Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <style> .theme-panel{position:fixed;top:16px;right:18px;z-index:40;display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.92);box-shadow:0 10px 30px rgba(15,10,5,0.18);} .theme-panel__swatch{width:18px;height:18px;border-radius:6px;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,0.08);} .theme-panel__slider{appearance:none;-webkit-appearance:none;width:150px;height:8px;border-radius:999px;background:linear-gradient(90deg, #ff0044 0%, #ff9800 16%, #ffeb3b 32%, #4caf50 48%, #00bcd4 64%, #3f51b5 80%, #e91e63 100%);} .theme-panel__slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,0.3);cursor:pointer;margin-top:-5px;} .theme-panel__slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,0.3);cursor:pointer;} .theme-panel__slider::-moz-range-track{background:transparent;border:none;} </style></head>
+  <body class="collection-theme">
+    <div class="theme-panel" data-theme-panel>
+      <div class="theme-panel__swatch"></div>
+      <input
+        type="range"
+        min="0"
+        max="360"
+        value="24"
+        class="theme-panel__slider"
+        data-theme-hue
+        aria-label="Adjust theme color"
+      />
+    </div>
+    <header class="collection-top">
+      <a class="logo-mark" href="index.html" aria-label="Back to home">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </header>
+    <main class="collection-main">
+      <div class="collection-hero">
+        <p class="collection-breadcrumb stagger-item" style="--stagger-delay: 40ms" data-copy="breadcrumb"></p>
+        <h1 class="stagger-item" style="--stagger-delay: 120ms" data-collection-title></h1>
+        <p class="stagger-item" style="--stagger-delay: 200ms" data-collection-description></p>
+        <div class="collection-meta stagger-item" style="--stagger-delay: 260ms">
+          <a class="btn ghost" href="index.html" data-copy="backHome"></a>
+          <button class="btn secondary" data-copy-btn></button>
+        </div>
+      </div>
+      <section class="resource-list" data-resource-list></section>
+    </main>
+    <footer class="site-footer">
+      <p data-copy="footerNote"></p>
+    </footer>
+    <template id="resource-card-template">
+      <article class="resource-card">
+        <div class="resource-info">
+          <h3><a target="_blank" rel="noopener" data-resource-link></a></h3>
+          <p data-resource-description></p>
+        </div>
+        <div class="resource-tags" data-resource-tags></div>
+        <a class="resource-corner" data-resource-corner target="_blank" rel="noopener" aria-label="Open resource"></a>
+      </article>
+    </template>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/collection.js"></script>
+  </body>
+</html>
